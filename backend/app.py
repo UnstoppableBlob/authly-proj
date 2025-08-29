@@ -33,7 +33,6 @@ def create_user(username, word1, word2, word3):
     return "user created"
 
 
-
 @app.route("/loginuser/<username>/<word1>/<word2>/<word3>")
 def login_user(username, word1, word2, word3):
     with open(datafile, "r") as file:
