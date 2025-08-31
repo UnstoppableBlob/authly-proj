@@ -1,6 +1,4 @@
-import { useState } from "react";
 import "./App.css";
-import { QrCode } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Register from "./pages/Register";

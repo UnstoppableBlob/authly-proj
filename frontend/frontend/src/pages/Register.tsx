@@ -1,3 +1,4 @@
+import { backendURL } from "@/config";
 import { Button, VStack, Input, Heading } from "@chakra-ui/react";
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
     }
 
     const response = await fetch(
-      "http://127.0.0.1:5000/createuser/" +
+      `${backendURL}/createuser/` +
         username.value +
         "/" +
         word1.value +

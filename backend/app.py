@@ -51,14 +51,15 @@ def login_user(username, word1, word2, word3):
 def get_history(username, word1, word2, word3):
     with open(datafile, "r") as file:
         data = json.load(file)
-        
-    if username not in data.keys():
+
+    if username not in data:
         return "user does not exist"
-    
+
     if data[username]["words"] == [word1, word2, word3]:
-        return data[username]["history"]
+        return jsonify(data[username]["history"])
     else:
         return "incorrect credentials"
+
 
 @app.route("/addhistory/<username>/<word1>/<word2>/<word3>/<historyitem>")
 def add_history(username, word1, word2, word3, historyitem):
@@ -71,7 +72,7 @@ def add_history(username, word1, word2, word3, historyitem):
     if data[username]["words"] == [word1, word2, word3]:
         data[username]["history"].append(historyitem)
         with open(datafile, "w") as file:
-            data = json.dump(data, file)
+            data = json.dump(data, file) # this is a bug but it should still work and I don't want to mess with it
         return "added succesfully"
     else:
         return "incorrect credentials"

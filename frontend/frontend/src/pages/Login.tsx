@@ -9,6 +9,7 @@ import {
   Portal,
 } from "@chakra-ui/react";
 import { Scanner } from "@yudiel/react-qr-scanner";
+import { backendURL } from "@/config";
 
 export default function Home() {
   const [username, setUsername] = useState("");
@@ -27,7 +28,7 @@ export default function Home() {
     }
 
     const response = await fetch(
-      `http://127.0.0.1:5000/loginuser/${username}/${word1}/${word2}/${word3}`,
+      `${backendURL}/loginuser/${username}/${word1}/${word2}/${word3}`,
       { method: "GET" }
     );
 

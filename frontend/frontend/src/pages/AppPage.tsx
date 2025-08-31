@@ -1,11 +1,5 @@
-import {
-  Button,
-  VStack,
-  HStack,
-  For,
-  Spinner,
-  Heading,
-} from "@chakra-ui/react";
+import { backendURL } from "@/config";
+import { Button, HStack, For, Spinner, Heading } from "@chakra-ui/react";
 import { Card, QrCode, SimpleGrid, Box, Input } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
@@ -27,7 +21,7 @@ export default function AppPage() {
   async function getHistory() {
     // @app.route("/gethistory/<username>/<word1>/<word2>/<word3>")
     const response = await fetch(
-      "http://127.0.0.1:5000/gethistory/" +
+      `${backendURL}/gethistory/` +
         username +
         "/" +
         word1 +
@@ -80,7 +74,7 @@ export default function AppPage() {
     }
 
     const response = await fetch(
-      "http://127.0.0.1:5000/addhistory/" +
+      `${backendURL}/addhistory/` +
         username +
         "/" +
         word1 +
