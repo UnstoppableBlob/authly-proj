@@ -1,4 +1,11 @@
-import { Button, VStack, HStack, For, Spinner } from "@chakra-ui/react";
+import {
+  Button,
+  VStack,
+  HStack,
+  For,
+  Spinner,
+  Heading,
+} from "@chakra-ui/react";
 import { Card, QrCode, SimpleGrid, Box, Input } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
@@ -67,6 +74,11 @@ export default function AppPage() {
   }
 
   async function onSaveClick() {
+    if (code === "") {
+      alert("Please enter a code!");
+      return;
+    }
+
     const response = await fetch(
       "http://127.0.0.1:5000/addhistory/" +
         username +
@@ -101,7 +113,7 @@ export default function AppPage() {
 
   return (
     <div>
-      <h1>QR Code Generator</h1>
+      <Heading size="4xl">QR Code Generator</Heading>
       <br />
       <HStack
         style={{ margin: "auto", width: "100%", justifyContent: "center" }}
@@ -120,7 +132,7 @@ export default function AppPage() {
             type="text"
             placeholder="Enter text"
             onChange={onChange}
-            style={{ width: "80%", margin: "auto", textAlign: "center" }}
+            style={{ margin: "auto", textAlign: "center" }}
           />
           <br />
           <QrCode.Root value={code} style={{ margin: "auto" }}>
@@ -166,6 +178,13 @@ export default function AppPage() {
           )}
         </For>
       </SimpleGrid>
+      <style>
+        {`
+          Input {
+            width: 300px;
+          }
+        `}
+      </style>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Button, VStack } from "@chakra-ui/react";
+import { Button, VStack, Input, Heading } from "@chakra-ui/react";
 
 export default function Home() {
   // @app.route("/createuser/<username>/<word1>/<word2>/<word3>")
@@ -9,6 +9,17 @@ export default function Home() {
     const word1 = document.getElementById("foodquery") as HTMLInputElement;
     const word2 = document.getElementById("colorquery") as HTMLInputElement;
     const word3 = document.getElementById("hobbyquery") as HTMLInputElement;
+
+    if (
+      username.value === "" ||
+      word1.value === "" ||
+      word2.value === "" ||
+      word3.value === ""
+    ) {
+      alert("Please fill in all fields");
+      return;
+    }
+
     const response = await fetch(
       "http://127.0.0.1:5000/createuser/" +
         username.value +
@@ -41,7 +52,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Register</h1>
+      <Heading size="4xl">Register</Heading>
       <br />
       <h4>
         Enter a username and answer the following questions to make an account:
@@ -50,20 +61,27 @@ export default function Home() {
         <VStack>
           <br />
           <label htmlFor="usernamequery">Username?</label>
-          <input id="usernamequery" type="text" placeholder="Bob" />
+          <Input id="usernamequery" type="text" placeholder="Bob" />
           <br />
           <label htmlFor="foodquery">Favorite Food?</label>
-          <input id="foodquery" type="text" placeholder="macandcheese" />
+          <Input id="foodquery" type="text" placeholder="macandcheese" />
           <br />
           <label htmlFor="colorquery">Favorite Color?</label>
-          <input id="colorquery" type="text" placeholder="blue" />
+          <Input id="colorquery" type="text" placeholder="blue" />
           <br />
           <label htmlFor="hobbyquery">Favorite Hobby?</label>
-          <input id="hobbyquery" type="text" placeholder="sleepinginabox" />
+          <Input id="hobbyquery" type="text" placeholder="sleepinginabox" />
           <br />
           <Button onClick={register}>Register</Button>
         </VStack>
       </div>
+      <style>
+        {`
+          Input {
+            width: 200px;
+          }
+        `}
+      </style>
     </div>
   );
 }

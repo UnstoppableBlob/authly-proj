@@ -1,10 +1,15 @@
-import { Button, VStack } from "@chakra-ui/react";
+import { Button, Heading, VStack } from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <div>
-      <VStack>
-        <h1>QR Auth</h1>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <VStack align={"center"}>
+        <Heading size="5xl">QR Auth</Heading>
         <br />
         <Button asChild>
           <a href="/#/register">Register</a>

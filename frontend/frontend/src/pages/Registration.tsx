@@ -1,8 +1,6 @@
-import { QrCode, Button } from "@chakra-ui/react";
+import { QrCode, Button, Heading } from "@chakra-ui/react";
 
 export default function Registration() {
-  // from register page: "/#/registration/<username>/<word1>/<word2>/<word3>" (needs to be split and set to variables here)
-
   const path = window.location.hash.split("/");
   const username = path[2];
   const word1 = path[3];
@@ -11,7 +9,8 @@ export default function Registration() {
 
   return (
     <div>
-      <h1>Welcome, {username}</h1>
+      <Heading size="4xl">Welcome, {username}</Heading>
+      <br />
       <br />
 
       <QrCode.Root value={word1} style={{ margin: "auto" }}>
@@ -22,6 +21,7 @@ export default function Registration() {
 
       <p>Code 1</p>
       <br />
+      <br />
 
       <QrCode.Root value={word2} style={{ margin: "auto" }}>
         <QrCode.Frame>
@@ -30,6 +30,7 @@ export default function Registration() {
       </QrCode.Root>
 
       <p>Code 2</p>
+      <br />
       <br />
 
       <QrCode.Root value={word3} style={{ margin: "auto" }}>
@@ -40,9 +41,11 @@ export default function Registration() {
 
       <p>Code 3</p>
       <br />
+      <br />
 
       <p>
-        Print these QR codes and keep them safe. You'll need them to log in.
+        Print these QR codes and keep them safe. You'll need to scan them to log
+        in. (Or just take a photo.)
       </p>
 
       <br />
