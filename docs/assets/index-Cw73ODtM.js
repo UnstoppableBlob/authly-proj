@@ -36172,7 +36172,7 @@ function e_() {
     u === "user created"
       ? (alert("User created successfully!"),
         (window.location.href =
-          "authly-proj/#/registration/" +
+          "/authly-proj/#/registration/" +
           t.value +
           "/" +
           r.value +
