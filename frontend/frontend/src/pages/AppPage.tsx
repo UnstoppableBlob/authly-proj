@@ -12,7 +12,7 @@ export default function AppPage() {
 
   if (!username || !word1 || !word2 || !word3) {
     alert("You are not logged in!");
-    window.location.href = "/#/login";
+    window.location.href = "/authly-proj/#/login";
   }
 
   const [history, setHistory] = useState<string[]>([]);
@@ -38,10 +38,10 @@ export default function AppPage() {
 
     if (text === "user does not exist") {
       alert("User does not exist!");
-      window.location.href = "/#/app";
+      window.location.href = "/authly-proj/#/app";
     } else if (text === "incorrect credentials") {
       alert("Incorrect credentials!");
-      window.location.href = "/#/app";
+      window.location.href = "/authly-proj/#/app";
     } else {
       const history = JSON.parse(text);
       setHistory(history);
@@ -60,7 +60,7 @@ export default function AppPage() {
     localStorage.removeItem("word2");
     localStorage.removeItem("word3");
     alert("Logged out!");
-    window.location.href = "/#/";
+    window.location.href = "/authly-proj/#/";
   }
 
   async function onChange(e: any) {
@@ -93,10 +93,10 @@ export default function AppPage() {
 
     if (text === "user does not exist") {
       alert("User does not exist!");
-      window.location.href = "/#/app";
+      window.location.href = "/authly-proj/#/app";
     } else if (text === "incorrect credentials") {
       alert("Incorrect credentials!");
-      window.location.href = "/#/app";
+      window.location.href = "/authly-proj/#/app";
     } else if (text === "added succesfully") {
       alert("History added successfully!");
       setHistory([...history, code]);

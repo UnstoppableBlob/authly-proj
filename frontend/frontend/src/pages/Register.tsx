@@ -38,7 +38,7 @@ export default function Home() {
     if (text === "user created") {
       alert("User created successfully!");
       window.location.href =
-        "#/registration/" +
+        "authly-proj/#/registration/" +
         username.value +
         "/" +
         word1.value +

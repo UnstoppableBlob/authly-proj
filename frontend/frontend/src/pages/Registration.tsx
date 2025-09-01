@@ -51,7 +51,7 @@ export default function Registration() {
       <br />
 
       <Button asChild>
-        <a href="/#/login">Proceed to Login</a>
+        <a href="/authly-proj/#/login">Proceed to Login</a>
       </Button>
     </div>
   );

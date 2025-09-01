@@ -40,7 +40,7 @@ export default function Home() {
       localStorage.setItem("word1", word1);
       localStorage.setItem("word2", word2);
       localStorage.setItem("word3", word3);
-      window.location.href = "/#/app";
+      window.location.href = "/authly-proj/#/app";
     } else if (text === "login failed") {
       alert("Login failed, probably incorrect codes");
     } else if (text === "user does not exist") {

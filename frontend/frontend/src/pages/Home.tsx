@@ -12,11 +12,11 @@ export default function Home() {
         <Heading size="5xl">QR Auth</Heading>
         <br />
         <Button asChild>
-          <a href="/#/register">Register</a>
+          <a href="/authly-proj/#/register">Register</a>
         </Button>
         <br />
         <Button asChild>
-          <a href="/#/login">Login</a>
+          <a href="/authly-proj/#/login">Login</a>
         </Button>
       </VStack>
     </div>
